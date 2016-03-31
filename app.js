@@ -8,6 +8,16 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost/vwlUsuarios',function(err, res){
+    if (err) {
+        console.log('Conexion a la base de datos fallida, Error: ' + err)
+    }else{
+        console.log('Conexion a la base de datos exitosa')
+    }
+})
+
 var app = express();
 
 // view engine setup
