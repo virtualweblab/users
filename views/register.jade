@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	div(class="top-content")
+		div(class="inner-bg")
+			div(class="container")
+				div(class="row")
+					div(class="col-sm-8 col-sm-offset-2 text")
+						h1
+							strong VWL
+							h1 User register
+						div(class="description")
+							p Please fill the information
+				div(class='row')
+					div(class="col-sm-1 middle-border")
+					div(class="col-sm-1")
+					div(class="col-sm-5")
+						div(class="form-box")
+							div(class="form-top")
+								div(class="form-top-left")
+									h3 Atention
+									p All rights reserved
+								div(class="form-top-right")
+									i(class="fa fa-pencil")
+							div(class="form-bottom")
+							form(lass="form col-md-12 center-block" action="/perfil" method="post")
+								div(class="form-group")
+									label(class="sr-only" for="form-first-name") Name
+									input(type="text" name="name" placeholder="Name ..." class="form-first-name form-control" id="form-first-name")
+								div(class="form-group")
+									label(class="sr-only" for="form-first-name") LastName
+									input(type="text" name="lastName" placeholder="LastName ..." class="form-first-name form-control" id="form-first-name")
+								div(class="form-group")
+									label(class="sr-only" for="form-id") Password
+									input(type="password" name="password" placeholder="Password..." class="form-last-name form-control" id="form-last-name")
+								div(class="form-group")
+									label(class="sr-only" for="form-id") Password
+									input(type="password" name="rePassword" placeholder="Re-Password..." class="form-last-name form-control" id="form-last-name")
+								div(class="form-group")
+									label(class="sr-only" for="form-email") Email
+									input(type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email")
+								button(class="btn btn-primary btn-lg btn-block") Submit
+
