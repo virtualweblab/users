@@ -19,6 +19,32 @@ createUser = function(req, res){
 	})
 }
 
+findUser = function(req, res){
+	Usersdb.findUser(req, function(err, user){
+		if (err) res.send(err)
+		else res.send(user)
+	})
+}
+
+findAllUsers = function(req, res){
+	Usersdb.findAllUsers(function(err, users){
+		if (err) res.send(err)
+		else res.send(users)
+	})
+}
+
+updateUser = function(req, res){
+	Usersdb.updateUser
+}
+
+deleteUser = function(req, res){
+	Usersdb.deleteUser
+}
+
 router.post('/createUser', createUser)
+router.get('/user/:id', findUser)
+router.get('/usersAll', findAllUsers)
+router.put('/user/:id', updateUser)
+router.delete('/user/:id', deleteUser)
 
 module.exports = router;
