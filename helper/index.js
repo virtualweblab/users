@@ -5,10 +5,10 @@ module.exports = function(){
 	createUser = function(req, callback){
 
 		var user = new User({
-			Name : req.body.name,
-			LastName : req.body.lastName,
-			Password : req.body.password,
-			Email : req.body.email
+			Name : req.body.Name,
+			LastName : req.body.LastName,
+			Password : req.body.Password,
+			Email : req.body.Email
 		})
 		user.save(function(err){
 			if (err) {
@@ -33,12 +33,12 @@ module.exports = function(){
 	updateUser = function(req, callback){
 		User.findById(req.params.id, function(err,user){
 
-			user.Name = req.body.name 
-			user.LastName = req.body.lastName
-			user.Password = req.body.password
-			user.Email = req.body.email 
-			user.Projects = req.body.projects 
-			user.Roll = req.body.roll
+			user.Name = req.body.Name
+			user.LastName = req.body.LastName
+			user.Password = req.body.Password
+			user.Email = req.body.Email
+			//user.Projects = req.body.projects
+			//user.Roll = req.body.roll
 
 			user.save(function(err){
 				if (err) callback(err)
@@ -54,7 +54,7 @@ module.exports = function(){
 		})
 	}
 
-	findAllUsers = function(req, callback){
+	findAllUsers = function(callback){
 		User.find(function(err, users){
 			if (err) callback(err)
 			else callback(null, users)

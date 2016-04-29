@@ -1,0 +1,52 @@
+
+extends layoutAdmin
+
+block content      
+    
+      // Navigation
+      
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1.page-header Tables
+          // /.col-lg-12
+        // /.row
+        .row
+          .col-lg-12
+            .panel.panel-default
+              .panel-heading
+                | DataTables Advanced Tables
+              // /.panel-heading
+              .panel-body
+                .dataTable_wrapper
+                  table#dataTables-example.table.table-striped.table-bordered.table-hover
+                    thead
+                      tr
+                        th Name
+                        th Last Name
+                        th E-Mail
+                        th Password
+                        th Actions
+                    tbody
+                      if(users)
+                        each user, index in users
+                          tr.odd.gradeX
+                            td= user.Name
+                            td= user.LastName
+                            td= user.Email
+                            td= user.Password
+                            td
+                      
+                // /.table-responsive
+                .well
+                  h4 VWL Usage Information
+                  p
+                    | VWL is a very flexible.
+                    a(target='_blank', href='https://github.com/virtualweblab') https://github.com/virtualweblab
+                    | .
+                  a.btn.btn-default.btn-lg.btn-block(target='_blank', href='https://github.com/virtualweblab') View VWL Documentation
+              // /.panel-body
+            // /.panel
+          // /.col-lg-12
+        // /.row
+      
