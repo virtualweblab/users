@@ -9,4 +9,8 @@ router.get('/register', function(req, res){
 	res.render('register')
 })
 
+router.get('/admin', function(req, res){
+  res.render('layoutAdmin')
+})
+
 module.exports = router;
