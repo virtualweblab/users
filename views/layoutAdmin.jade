@@ -6,7 +6,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
-    title SB Admin 2 - Bootstrap Admin Theme
+    title Panel
     // Bootstrap Core CSS
     link(href='../bower_components/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     // MetisMenu CSS
@@ -28,12 +28,12 @@ html(lang='en')
           a.navbar-brand(href='index.html') Admin
         // /.navbar-header
         ul.nav.navbar-top-links.navbar-right
-          li.dropdown
+          //-li.dropdown
             a.dropdown-toggle(data-toggle='dropdown', href='#')
               i.fa.fa-envelope.fa-fw
               i.fa.fa-caret-down
             ul.dropdown-menu.dropdown-messages
-              li
+              //-li
                 a(href='#')
                   div
                     strong John Smith
@@ -42,7 +42,7 @@ html(lang='en')
                   div
                     | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
               li.divider
-              li
+              //-li
                 a(href='#')
                   div
                     strong John Smith
@@ -51,7 +51,7 @@ html(lang='en')
                   div
                     | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
               li.divider
-              li
+              //-li
                 a(href='#')
                   div
                     strong John Smith
@@ -60,7 +60,7 @@ html(lang='en')
                   div
                     | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
               li.divider
-              li
+              //-li
                 a.text-center(href='#')
                   strong Read All Messages
                   i.fa.fa-angle-right
@@ -197,27 +197,27 @@ html(lang='en')
               li
                 a(href='/admin')
                   i.fa.fa-dashboard.fa-fw
-                  |  Dashboard
+                  |  Paneles Instrumentacion
               li
                 a(href='#')
                   i.fa.fa-bar-chart-o.fa-fw
-                  |  Charts
+                  |  Graficos
                   span.fa.arrow
                 ul.nav.nav-second-level
                   li
-                    a(href='flot.html') Flot Charts
-                  li
+                    a(href='/flots') Tiempo Real
+                  //li
                     a(href='morris.html') Morris.js Charts
                 // /.nav-second-level
               li
                 a(href='/usersTable')
                   i.fa.fa-table.fa-fw
                   |  Usuarios
-              li
+              //li
                 a(href='forms.html')
                   i.fa.fa-edit.fa-fw
                   |  Forms
-              li
+              //li
                 a(href='#')
                   i.fa.fa-wrench.fa-fw
                   |  UI Elements
@@ -236,7 +236,7 @@ html(lang='en')
                   li
                     a(href='grid.html') Grid
                 // /.nav-second-level
-              li
+              //li
                 a(href='#')
                   i.fa.fa-sitemap.fa-fw
                   |  Multi-Level Dropdown
@@ -261,7 +261,7 @@ html(lang='en')
                         a(href='#') Third Level Item
                     // /.nav-third-level
                 // /.nav-second-level
-              li
+              //li
                 a(href='#')
                   i.fa.fa-files-o.fa-fw
                   |  Sample Pages

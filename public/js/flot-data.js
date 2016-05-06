@@ -7,10 +7,10 @@ $(document).ready(function() {
     function plot() {
         var sin = [],
             cos = [];
-        for (var i = 0; i < 12; i += 0.2) {
+        /*for (var i = 0; i < 12; i += 0.2) {
             sin.push([i, Math.sin(i + offset)]);
             cos.push([i, Math.cos(i + offset)]);
-        }
+        }*/
 
         var options = {
             series: {
@@ -40,17 +40,17 @@ $(document).ready(function() {
 
         var plotObj = $.plot($("#flot-line-chart"), [{
                 data: sin,
-                label: "sin(x)"
+                //label: "sin(x)"
             }, {
                 data: cos,
-                label: "cos(x)"
+                //label: "cos(x)"
             }],
             options);
-    }
+        }
 });
 
 //Flot Pie Chart
-$(function() {
+/*$(function() {
 
     var data = [{
         label: "Series 0",
@@ -87,7 +87,8 @@ $(function() {
     });
 
 });
-
+*/
+/*
 //Flot Multiple Axes Line Chart
 $(function() {
     var oilprices = [
@@ -1098,7 +1099,7 @@ $(function() {
         doPlot($(this).text());
     });
 });
-
+*/
 //Flot Moving Line Chart
 
 $(function() {
@@ -1200,7 +1201,7 @@ $(function() {
 });
 
 //Flot Bar Chart
-
+/*
 $(function() {
 
     var barOptions = {
@@ -1240,3 +1241,4 @@ $(function() {
     $.plot($("#flot-bar-chart"), [barData], barOptions);
 
 });
+*/
