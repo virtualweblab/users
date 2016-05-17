@@ -38,14 +38,14 @@ $(document).ready(function() {
             }
         };
 
-        var plotObj = $.plot($("#flot-line-chart"), [{
+        /*var plotObj = $.plot($("#flot-line-chart"), [{
                 data: sin,
                 //label: "sin(x)"
             }, {
                 data: cos,
                 //label: "cos(x)"
             }],
-            options);
+            options);*/
         }
 });
 
