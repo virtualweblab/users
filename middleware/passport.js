@@ -22,7 +22,7 @@ module.exports = function(passport) {
 		clientID		: config.facebook.key,
 		clientSecret	: config.facebook.secret,
 		callbackURL	 	: '/auth/facebook/callback',
-		profileFields 	: ['id', 'displayName', /*'provider',*/ 'photos']
+		profileFields 	: ['id', 'displayName', /*'provider',*/ 'photos', 'email']
 	}, function(accessToken, refreshToken, profile, done) {
 		
 		User.findOne({provider_id: profile.id}, function(err, user) {
@@ -33,6 +33,7 @@ module.exports = function(passport) {
 				provider_id		: profile.id,
 				provider		: profile.provider,
 				Name			: profile.displayName,
+				Email 			: profile.Email,
 				photo			: profile.photos[0].value
 			});
 			user.save(function(err) {

@@ -10,6 +10,7 @@ module.exports = function(){
 			Password : req.body.Password,
 			Email : req.body.Email
 		})
+		
 		user.save(function(err){
 			if (err) {
 				console.log('Creacion de usuario fallida, Err: ' + err)
@@ -37,8 +38,8 @@ module.exports = function(){
 			user.LastName = req.body.LastName
 			user.Password = req.body.Password
 			user.Email = req.body.Email
-			//user.Projects = req.body.projects
-			//user.Roll = req.body.roll
+			user.Roll = req.body.Roll
+
 
 			user.save(function(err){
 				if (err) callback(err)
@@ -61,11 +62,22 @@ module.exports = function(){
 		})
 	}
 
+	findForLogin = function(req, callback){
+		//console.log(req.body.Email)
+		User.find({Email : req.body.Email,
+					Password : req.body.Password},
+					function(err, user){
+						if(err) callback(err)
+						if(!err && user) callback(null, user)
+					})
+	}
+
 	return {
 		createUser : createUser,
 		deleteUser : deleteUser,
 		updateUser : updateUser,
 		findUser : findUser,
+		findForLogin :findForLogin,
 		findAllUsers : findAllUsers
 	}
 }

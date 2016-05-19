@@ -8,5 +8,58 @@ block content
           h1(class="page-header")= title
           if(user)
             li Bienvenido #{user.Name}
-            li
-              img(src="#{user.photo}")
+            if(user.photo)
+              li
+                img(src="#{user.photo}")
+            .panel.panel-default
+              .panel-heading
+                | Perfil
+              // /.panel-heading
+              .panel-body
+                // Nav tabs
+                ul.nav.nav-tabs
+                  li.active
+                    a(href='#home', data-toggle='tab') Info
+                  li
+                    a(href='#profile', data-toggle='tab') Perfil
+                  li
+                    a(href='#messages', data-toggle='tab') Mesajes
+                // Tab panes
+                .tab-content
+                  #home.tab-pane.fade.in.active
+                    h4 Información
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  #profile.tab-pane.fade
+                    h4 Perfil
+                    p
+                      | Puedes modificar tu perfil aqui.
+                    .panel-body
+                    .row
+                      .col-lg-12
+                        form(role='form')
+                          .form-group
+                            label Nombre
+                            input.form-control
+                            p.help-block Example block-level help text here.
+                          .form-group
+                            label Apellido
+                            input.form-control
+                            p.help-block Example block-level help text here.
+                          .form-group
+                            label Email
+                            input.form-control
+                            p.help-block Example block-level help text here.
+                          .form-group
+                            label Selects
+                            select.form-control
+                              option Estudiante
+                              option Administrador
+                              option Profesor
+                              option Usuario
+                          button.btn.btn-default(type='submit') Submit Button
+                          button.btn.btn-default(type='reset') Reset Button
+                  #messages.tab-pane.fade
+                    h4 Mensajes
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

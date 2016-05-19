@@ -4,6 +4,8 @@ var router = express.Router();
 var Users = require('../helper')
 var Usersdb = Users()
 
+var session = require('express-session')
+
 /* GET users listing. */
 router.get('/', function(req, res) {
   res.send('respond with a resource');
@@ -15,7 +17,7 @@ createUser = function(req, res){
 			res.send(err)
 		}else{
 			//res.send(user)
-      res.render('login')
+      		res.render('login')
 		}
 	})
 }
@@ -42,10 +44,24 @@ deleteUser = function(req, res){
 	Usersdb.deleteUser
 }
 
+findForLogin = function(req,res){
+	Usersdb.findForLogin(req,function(err, user){
+		if (err) {
+			res.redirect('/login')
+		}
+		else{
+			req.session.user = user
+			req.session.auth = true
+			res.redirect('/admin')
+		}
+	})
+}
+
 router.post('/createUser', createUser)
 router.get('/user/:id', findUser)
 router.get('/usersAll', findAllUsers)
 router.put('/user/:id', updateUser)
 router.delete('/user/:id', deleteUser)
+router.post('/findPass', findForLogin)
 
 module.exports = router;

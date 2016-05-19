@@ -51,6 +51,8 @@ app.use('/users', users);
 
 
 app.get('/logout', function(req, res) {
+  req.session.auth = false
+  req.session.destroy()
   req.logout();
   res.redirect('/login');
 });
@@ -66,6 +68,7 @@ app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
+    req.session.auth = true
     res.redirect('/admin');
 });
 
