@@ -178,7 +178,7 @@ html(lang='en')
                   |  Settings
               li.divider
               li
-                a(href='login.html')
+                a(href='Logout')
                   i.fa.fa-sign-out.fa-fw
                   |  Logout
             // /.dropdown-user
@@ -198,7 +198,7 @@ html(lang='en')
                 a(href='/admin')
                   i.fa.fa-dashboard.fa-fw
                   |  Paneles Instrumentacion
-              li
+              //-li
                 a(href='#')
                   i.fa.fa-bar-chart-o.fa-fw
                   |  Graficos
@@ -209,6 +209,18 @@ html(lang='en')
                   //li
                     a(href='morris.html') Morris.js Charts
                 // /.nav-second-level
+              li
+                a(href='#')
+                  i.fa.fa-bar-chart-o.fa-fw
+                  | Laboratorios
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='/flots') Vapor
+                  li
+                    a(href='#') Refrigeración
+                  li
+                    a(href='#') Oleohidráulica
               li
                 a(href='/usersTable')
                   i.fa.fa-table.fa-fw

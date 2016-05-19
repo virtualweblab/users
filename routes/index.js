@@ -12,7 +12,9 @@ router.get('/register', function(req, res){
 	res.render('register')
 })
 router.get('/admin', function(req, res){
-	res.render('admin')
+	console.log(req.user)
+	res.render('admin',{title: 'VWL',
+    					user: req.user})
 })
 router.get('/dashes', function(req, res){
 	res.render('dashes')

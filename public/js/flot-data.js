@@ -5,14 +5,14 @@ $(document).ready(function() {
     plot();
 
     function plot() {
-        var sin = [],
-            cos = [];
+        //var sin = [],
+        //    cos = [];
         /*for (var i = 0; i < 12; i += 0.2) {
             sin.push([i, Math.sin(i + offset)]);
             cos.push([i, Math.cos(i + offset)]);
         }*/
 
-        var options = {
+        /*var options = {
             series: {
                 lines: {
                     show: true
@@ -37,7 +37,7 @@ $(document).ready(function() {
                 }
             }
         };
-
+*/
         /*var plotObj = $.plot($("#flot-line-chart"), [{
                 data: sin,
                 //label: "sin(x)"
@@ -1183,7 +1183,7 @@ $(function() {
         },
         yaxis: {
             min: 0,
-            max: 110
+            max: 120
         },
         legend: {
             show: true

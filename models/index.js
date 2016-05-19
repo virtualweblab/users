@@ -3,16 +3,17 @@ var Schema = mongoose.Schema
 var validator = require('node-mongoose-validator')
 
 var users = new Schema({
-	Name 	:	{type: String,
-					require:true},
+	Name 	:	{type: String},
 	LastName: 	{type: String},
 	Password: 	{},
-	Email 	: 	{type: String,
-					require:true},
+	Email 	: 	{type: String},
 	Roll 	:	{type: String,
 					enum : ['admin','user','student','profesor'],
 					default: 'student'},
-	Date	: 	{type: Date, default: Date.now}
+	provider_id : {},
+	provider : {},
+	photo : String,
+	CreateDate	: 	{type: Date, default: Date.now}
 })
 users.path('Email').validate(validator.isEmail(),'Please validate the Email')
 //users.path('Password').validate(validator.isAlphanumeric(),'Please validate the Password because needs aphanumeric')
