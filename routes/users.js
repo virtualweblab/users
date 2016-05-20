@@ -37,11 +37,17 @@ findAllUsers = function(req, res){
 }
 
 updateUser = function(req, res){
-	Usersdb.updateUser
+	Usersdb.updateUser(req,function(err, user){
+		if (err) res.send(err)
+		else res.send(user)
+	})
 }
 
 deleteUser = function(req, res){
-	Usersdb.deleteUser
+	Usersdb.deleteUser(req, function(err, user){
+		if (err) res.send(err)
+		else res.redirect('/usersTable')
+	})
 }
 
 findForLogin = function(req,res){
@@ -60,8 +66,8 @@ findForLogin = function(req,res){
 router.post('/createUser', createUser)
 router.get('/user/:id', findUser)
 router.get('/usersAll', findAllUsers)
-router.put('/user/:id', updateUser)
-router.delete('/user/:id', deleteUser)
+router.post('/update/:id', updateUser)
+router.get('/delete/:id', deleteUser)
 router.post('/findPass', findForLogin)
 
 module.exports = router;

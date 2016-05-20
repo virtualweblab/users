@@ -8,14 +8,14 @@ block content
       #page-wrapper
         .row
           .col-lg-12
-            h1.page-header Tables
+            h1.page-header Tablas
           // /.col-lg-12
         // /.row
         .row
           .col-lg-12
             .panel.panel-default
               .panel-heading
-                | DataTables Advanced Tables
+                | Datos de los usuarios de la plataforma
               // /.panel-heading
               .panel-body
                 .dataTable_wrapper
@@ -41,14 +41,13 @@ block content
                                   i(class="icon_plus_alt2")
                                 a(class="btn btn-success" href="#")
                                   i(class="icon_check_alt2")
-                                a(class="btn btn-danger" href="#")
+                                a(class="btn btn-danger" data-confirm='Are you sure?', data-method='delete', href='users/delete/#{user._id}', rel='nofollow')
                                   i(class="icon_close_alt2")
-                // /.table-responsive
                 .well
                   h4 VWL Usage Information
                   p
                     | VWL is a very flexible.
-                    a(target='_blank', href='https://github.com/virtualweblab') https://github.com/virtualweblab
+                    a(target='_blank', href='https://github.com/virtualweblab')  https://github.com/virtualweblab
                     | .
                   a.btn.btn-default.btn-lg.btn-block(target='_blank', href='https://github.com/virtualweblab') View VWL Documentation
               // /.panel-body

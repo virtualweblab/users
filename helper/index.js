@@ -24,7 +24,7 @@ module.exports = function(){
 
 	deleteUser = function(req, callback){
 		User.findById(req.params.id, function(err,user){
-			user.remove(function (err){
+			user.remove({_id : req.params.id },function (err){
 				if (err) callback(err)
 				else callback(null, user)
 			})
@@ -33,12 +33,13 @@ module.exports = function(){
 
 	updateUser = function(req, callback){
 		User.findById(req.params.id, function(err,user){
+			if(err) callback(err)
 
-			user.Name = req.body.Name
-			user.LastName = req.body.LastName
-			user.Password = req.body.Password
-			user.Email = req.body.Email
-			user.Roll = req.body.Roll
+			if(req.body.Name != undefined) user.Name = req.body.Name;
+			if(req.body.LastName != undefined)user.LastName = req.body.LastName;
+			if(req.body.Password != undefined)user.Password = req.body.Password;
+			if(req.body.Email != undefined)user.Email = req.body.Email;
+			if(req.body.Roll != undefined)user.Roll = req.body.Roll;
 
 
 			user.save(function(err){

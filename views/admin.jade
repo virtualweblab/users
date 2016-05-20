@@ -29,7 +29,9 @@ block content
                   #home.tab-pane.fade.in.active
                     h4 Información
                     p
-                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      li Nombre : #{user.Name}
+                      li Apellidor : #{user.LastName}
+                      li Email : #{user.Email}
                   #profile.tab-pane.fade
                     h4 Perfil
                     p
@@ -37,29 +39,31 @@ block content
                     .panel-body
                     .row
                       .col-lg-12
-                        form(role='form')
+                        form(role='form' action="/users/update/#{user._id}" method="post")
                           .form-group
                             label Nombre
-                            input.form-control
-                            p.help-block Example block-level help text here.
+                            input.form-control(name='Name' id='Name' value='#{user.Name}')
+                            p.help-block Modifica tu Nombre.
                           .form-group
                             label Apellido
-                            input.form-control
-                            p.help-block Example block-level help text here.
+                            input.form-control(name='LastName' id='LastName' value='#{user.LastName}')
+                            p.help-block Modifica tu Apellido.
                           .form-group
                             label Email
-                            input.form-control
-                            p.help-block Example block-level help text here.
+                            input.form-control(name='Email' id='Email' value='#{user.Email}')
+                            p.help-block Escribe tu E-Mail.
                           .form-group
-                            label Selects
-                            select.form-control
-                              option Estudiante
-                              option Administrador
-                              option Profesor
-                              option Usuario
-                          button.btn.btn-default(type='submit') Submit Button
-                          button.btn.btn-default(type='reset') Reset Button
+                            label Elige tu Roll
+                            select.form-control(name='Roll' id='Roll')
+                              option(value='student') Estudiante
+                              option(value='admin') Administrador
+                              option(value='profesor') Profesor
+                              option(value='user') Usuario
+                          button.btn.btn-default(type='submit') Enviar
+                          button.btn.btn-default(type='reset') Reset formulario
                   #messages.tab-pane.fade
                     h4 Mensajes
                     p
                       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+

@@ -26,6 +26,12 @@ router.get('/dashes', function(req, res){
 router.get('/flots', function(req, res){
 	res.render('flots')
 })
+router.get('/refri', function(req, res){
+	res.render('refrigeracion')
+})
+router.get('/oleo', function(req, res){
+	res.render('oleohidraulica')
+})
 router.get('/usersTable', function(req, res){
 	if(req.session.auth && req.user.Roll == 'admin'){
 		Usersdb.findAllUsers(function(err, users){

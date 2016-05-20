@@ -1,0 +1,41 @@
+extends layoutAdmin
+
+block headMeta
+  //Timeline CSS
+  link(href='../dist/css/timeline.css', rel='stylesheet')
+  // Morris Charts CSS
+  link(href='../bower_components/morrisjs/morris.css', rel='stylesheet')
+
+block content
+  #page-wrapper
+      .row
+        .col-lg-12
+          h1.page-header Gráficos en tiempo real.
+      .row
+        .col-lg-12
+          .panel.panel-default
+            .panel-heading
+              | Proceso en tiempo real de la presión
+            .panel-body
+              .flot-chart
+                #flot-line-chart-moving.flot-chart-content
+        .col-lg-12
+          .panel.panel-default
+            .panel-heading
+              | Como usar la plataforma
+            .panel-body
+              p
+                |  Para usar nuestra plataforma puedes dirigirte al siguiente enlace, 
+                a(target='_blank', href='http://http://virtualweblab.github.io//') http://virtualweblab.github.io
+                | .
+              a.btn.btn-default.btn-lg.btn-block(target='_blank', href='http://github.com/virtualweblab') Ver mas del código fuente de la aplicación. 
+
+block scriptBody
+  // Flot Charts JavaScript
+  script(src='../bower_components/flot/excanvas.min.js')
+  script(src='../bower_components/flot/jquery.flot.js')
+  script(src='../bower_components/flot/jquery.flot.pie.js')
+  script(src='../bower_components/flot/jquery.flot.resize.js')
+  script(src='../bower_components/flot/jquery.flot.time.js')
+  script(src='../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js')
+  script(src='../js/flot-data.js')
