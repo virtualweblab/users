@@ -4,6 +4,12 @@ var router = express.Router();
 var Users = require('../helper')
 var Usersdb = Users()
 
+router.get('/',function(req,res){
+	res.render('index')
+})
+
+
+
 /* GET home page. */
 router.get('/login', function(req, res) {
   res.render('login');

@@ -22,7 +22,12 @@ mongoose.connect('mongodb://localhost/vwlUsuarios',function(err, res){
     }
 })
 
-var app = express();
+//var app = express();
+var app = require('express')()
+var http = require('http').Server(app)
+var serialSocket = require('./serial-socket')
+
+serialSocket(http)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -103,5 +108,11 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.set('port' , process.env.PORT || 3000)
 
-module.exports = app;
+http.listen(app.get('port'), function(){
+  console.log('listening on port ' + app.settings['port'] + ": ")
+  console.log()
+});
+
+//module.exports = app;
