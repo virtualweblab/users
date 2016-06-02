@@ -1,3 +1,4 @@
+
 console.log('socket')
 var net = require('net');
 var tcp = require('./tcp')
@@ -19,8 +20,9 @@ module.exports = function (http){
 	        console.log(msg)
 	        //io.emit('serialCom', msg)
 					data_tcp.on('data', function(data){
-						console.log(data)
-						io.emit('serialCom', data)
+						console.log(data + 'l')
+						var dataTCP = data + '/'
+						io.emit('serialCom', dataTCP)
 					})
 	  })
   })
