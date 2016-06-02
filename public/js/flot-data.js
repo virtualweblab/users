@@ -1194,6 +1194,7 @@ $(function() {
 
     setInterval(function updateRandom() {
         series[0].data = getRandomData();
+        console.log(getRandomData())
         plot.setData(series);
         plot.draw();
     }, 40);

@@ -8,7 +8,7 @@ $('form').submit(function(){
   return false;
 });
 socket.on('serialCom', function(msg){
-  //$('#messages').append($('<li>').text(msg));
+  $('#messages').append($('<li>').text(msg));
   	msg = msg.split("%")
 	$('#messages').text(msg[1]);
 });
