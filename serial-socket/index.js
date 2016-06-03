@@ -8,9 +8,12 @@ module.exports = function (http){
 	var io = require('socket.io')(http)
 	var net = require('net');
 
-	var data_tcp = new tcp(1338)
-	var data_tcp2 = new tcp(1337)
-	var data_tcp3 = new tcp(1336)
+	var data_tcp_1 = new tcp(2000)
+	var data_tcp_2 = new tcp(1337)
+	var data_tcp_3 = new tcp(1336)
+
+	var dataTCP = {data_tcp_1, data_tcp_2, data_tcp_3}
+//	console.log(dataTCP)
 
 	async.waterfall([
 		socketWeb,
@@ -26,11 +29,15 @@ module.exports = function (http){
 
 	function socketTCP(socket, callback){
 		socket.on('serialCom', function(){
-			data_tcp.on('data', function(data){
-				io.emit('serialCom', data)
-				callback(null, data)
-			})
+			for (var i in dataTCP) {
+				console.log(dataTCP[i])
+				dataTCP[i].on('data', function(data){
+					io.emit('serialCom', data)
+					console.log(data);
+				})
+			}
 		})
+		callback(null, null)
 	}
 
 	function endSocket(err, result){
