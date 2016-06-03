@@ -8,9 +8,10 @@ $('form').submit(function(){
   return false;
 });
 socket.on('serialCom', function(msg){
-  $('#messages').append($('<li>').text(msg));
+  $('#messages').append($('<p>').text(msg));
   	msg = msg.split("%")
-	$('#messages').text(msg[1]);
+    msg = msg.substring(2)
+    $('#messages').text(msg[2]);
 });
 
 var smoothie = new SmoothieChart();

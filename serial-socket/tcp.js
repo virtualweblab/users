@@ -18,7 +18,7 @@ var socketTCP= function(port){
 		})
 	});
 
-	this.server.listen(this.port, '127.0.0.1');
+	this.server.listen(this.port, '172.31.68.14');
 	return data_tcp
 }
 

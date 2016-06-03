@@ -8,7 +8,7 @@ module.exports = function (http){
 	var io = require('socket.io')(http)
 	var net = require('net');
 
-	var data_tcp_1 = new tcp(2000)
+	var data_tcp_1 = new tcp(2001)
 	var data_tcp_2 = new tcp(1337)
 	var data_tcp_3 = new tcp(1336)
 
