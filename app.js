@@ -9,10 +9,10 @@ var methodOverride = require('method-override')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-// var passport = require('passport')
+var passport = require('passport')
 var mongoose = require('mongoose')
-//
-// require('./middleware/passport')(passport);
+
+require('./middleware/passport')(passport);
 
 mongoose.connect('mongodb://localhost/vwlUsuarios',function(err, res){
     if (err) {
@@ -22,7 +22,7 @@ mongoose.connect('mongodb://localhost/vwlUsuarios',function(err, res){
     }
 })
 
-//var app = express();
+var app = express();
 var app = require('express')()
 var http = require('http').Server(app)
 var serialSocket = require('./serial-socket')
@@ -48,8 +48,8 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
@@ -61,21 +61,21 @@ app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/login');
 });
-// Ruta para autenticarse con Twitter (enlace de login)
-//
-// app.get('/auth/facebook', passport.authenticate('facebook'));
-//
-// /*app.get('/auth/facebook/callback', passport.authenticate('facebook',
+//Ruta para autenticarse con Twitter (enlace de login)
+
+app.get('/auth/facebook', passport.authenticate('facebook'));
+
+// app.get('/auth/facebook/callback', passport.authenticate('facebook',
 //   { successRedirect: '/admin', failureRedirect: '/login' })
-// );*/
-//
-// app.get('/auth/facebook/callback',
-//   passport.authenticate('facebook', { failureRedirect: '/login' }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     req.session.auth = true
-//     res.redirect('/admin');
-// });
+// );
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    req.session.auth = true
+    res.redirect('/admin');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -8,10 +8,16 @@ $('form').submit(function(){
   return false;
 });
 socket.on('serialCom', function(msg){
+  msg = msg.substring(msg.indexOf('{'),msg.lastIndexOf('}'))
   $('#messages').append($('<p>').text(msg));
-  	msg = msg.split("%")
-    msg = msg.substring(2)
-    $('#messages').text(msg[2]);
+  console.log(JSON.parse(msg))
+  //console.log(msg.indexOf('{'))
+  //console.log(msg.lastIndexOf('}'))
+  //console.log(msg.substring(3,150))
+
+  	//msg = msg.split("%")
+    //msg = msg.substring(2)
+  //$('#messages').text(msg[2]);
 });
 
 var smoothie = new SmoothieChart();
