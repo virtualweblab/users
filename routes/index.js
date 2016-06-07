@@ -7,6 +7,9 @@ var Usersdb = Users()
 router.get('/',function(req,res){
 	res.render('index')
 })
+router.get('/panelcontrol',function(req,res){
+	res.render('panelcontrol')
+})
 
 
 
@@ -24,7 +27,7 @@ router.get('/admin', function(req, res){
 	    					user: req.user})
 	}else{
 		res.redirect('/Logout')
-	}	
+	}
 })
 router.get('/dashes', function(req, res){
 	res.render('dashes')

@@ -1,0 +1,38 @@
+extend layoutAdmin
+
+block headMeta
+  script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+  script(src='http://code.jquery.com/jquery-1.11.1.js')
+
+block content
+  
+  div(id="page-wrapper")
+    div(class="container-fluid")
+      div(class="row")
+        div(class="col-lg-12")
+          h1(class="page-header")
+          table#dataTables-example.table.table-striped.table-bordered.table-hover
+            thead
+              tr 
+                th  PLC_1
+                th  ENTRADAS
+                th  SALIDAS
+                th  ANALOGAS
+            tbody
+              td PLC_1
+              td#datosPLC_E
+              td#datosPLC_S
+              td#datosPLC_A
+          ul#messages
+          //- form(action='')
+          //-   input#m(autocomplete='off')
+          //-   button Send
+          //- ul#messages
+          script(type='text/javascript', src='./js/smoothie.js')
+          canvas#mycanvas(width='400', height='100')
+          canvas#mycanvas_S(width='400', height='100')
+          canvas#mycanvas_A(width='400', height='100')
+
+block scriptBody
+  script(src='/socket.io/socket.io.js')
+  script(type='text/javascript', src='./js/index.js')
