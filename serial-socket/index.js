@@ -1,11 +1,7 @@
-
-console.log('socket')
 var net = require('net');
 var tcp = require('./tcp')
 var async = require('async')
 var socketIoPlc = require('./socketIoPlc')
-
-socketIoPlc()
 
 module.exports = function (http){
 	var io = require('socket.io')(http)
@@ -14,6 +10,8 @@ module.exports = function (http){
 	var data_tcp_1 = new tcp(2000)
 	var data_tcp_2 = new tcp(1337)
 	var data_tcp_3 = new tcp(1336)
+
+	var socketIoPlc_1 = new socketIoPlc(8080)
 
 	var dataTCP = {data_tcp_1, data_tcp_2, data_tcp_3}
 //	console.log(dataTCP)
@@ -31,14 +29,19 @@ module.exports = function (http){
 	}
 
 	function socketTCP(socket, callback){
+
 		socket.on('serialCom', function(){
-			for (var i in dataTCP) {
-				//console.log(dataTCP[i])
-				dataTCP[i].on('data', function(data){
-					io.emit('serialCom', data)
-					//console.log(data);
-				})
-			}
+			socketIoPlc_1.on('data', function(data){
+				//console.log('data')
+				io.emit('serialCom', data)
+			})
+			// for (var i in dataTCP) {
+			// 	//console.log(dataTCP[i])
+			// 	dataTCP[i].on('data', function(data){
+			// 		io.emit('serialCom', data)
+			// 		//console.log(data);
+			// 	})
+			// }
 		})
 		callback(null, null)
 	}

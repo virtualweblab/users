@@ -8,13 +8,14 @@ $('form').submit(function(){
   return false;
 });
 socket.on('serialCom', function(msg){
-  msg = msg.substring(msg.indexOf('{'),msg.lastIndexOf('}'))
-  $('#messages').append($('<p>').text(msg));
-  console.log(JSON.parse(msg))
+  //msg = msg.substring(msg.indexOf('{'),msg.lastIndexOf('}'))
+  //msg = msg.substring(msg.indexOf('{'),msg.indexOf('&'))
+  console.log(msg);
+  $('#messages').append($('<p>').text(msg.entradas));
+  //console.log(JSON.parse(msg))
   //console.log(msg.indexOf('{'))
   //console.log(msg.lastIndexOf('}'))
   //console.log(msg.substring(3,150))
-
   	//msg = msg.split("%")
     //msg = msg.substring(2)
   //$('#messages').text(msg[2]);
