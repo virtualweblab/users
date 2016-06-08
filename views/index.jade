@@ -1,25 +1,47 @@
 doctype html
 html
   head
-    title Read Data
-    link(rel='stylesheet', type='text/css', href='./stylesheets/style.css')
-    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
-    script(src='http://code.jquery.com/jquery-1.11.1.js')
-  body
-    table
-      thead
-        tr
-          th  PLC
-          th  Datos Entradas
-      tbody
-        td PLC_1
-        td#datosPLC
-    ul#messages
-    form(action='')
-      input#m(autocomplete='off')
-      button Send
-    ul#messages
     script(type='text/javascript', src='./js/smoothie.js')
-    canvas#mycanvas(width='400', height='100')
-    script(src='/socket.io/socket.io.js')
-    script(type='text/javascript', src='./js/index.js')
+    link(href='http://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet', type='text/css')
+    script(type='text/javascript', src='./js/smoothieGenerator/smoothieGenerator.js')
+    link(href='./stylesheets/styleSmoothie/smoothieStyle.css', rel='stylesheet')
+  body(onload='onLoad()')
+    h1 Smoothie Charts Builder
+    canvas#chart(width='500', height='100')
+    #controls
+    h3 Code
+    #code
+      div
+        label(for='html-code') HTML:
+        br
+        textarea#html-code(readonly='', style='height:34px;')
+      div
+        label(for='javascript-code') JavaScript:
+        br
+        textarea#javascript-code(readonly='', style='min-height:140px;')
+
+//- doctype html
+//- html
+//-   head
+//-     title Read Data
+//-     link(rel='stylesheet', type='text/css', href='./stylesheets/style.css')
+//-     script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+//-     script(src='http://code.jquery.com/jquery-1.11.1.js')
+//-   body
+//-     table
+//-       thead
+//-         tr
+//-           th  PLC
+//-           th  Datos Entradas
+//-       tbody
+//-         td PLC_1
+//-         td#datosPLC
+//-     ul#messages
+//-     form(action='')
+//-       input#m(autocomplete='off')
+//-       button Send
+//-     ul#messages
+//-     script(type='text/javascript', src='./js/smoothie.js')
+//-     canvas#mycanvas(width='400', height='100')
+//-     script(src='/socket.io/socket.io.js')
+//-     script(type='text/javascript', src='./js/index.js')

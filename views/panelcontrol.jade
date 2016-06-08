@@ -29,9 +29,15 @@ block content
           //-   button Send
           //- ul#messages
           script(type='text/javascript', src='./js/smoothie.js')
-          canvas#mycanvas(width='400', height='100')
-          canvas#mycanvas_S(width='400', height='100')
-          canvas#mycanvas_A(width='400', height='100')
+          .row
+            .col-lg-12
+              canvas#mycanvas.img-responsive(width='800', height='100')
+          .row
+            .col-lg-12
+              canvas#mycanvas_S.img-responsive(width='800', height='100')
+          .row
+            .col-lg-12
+              canvas#mycanvas_A.img-responsive(width='800', height='100')
 
 block scriptBody
   script(src='/socket.io/socket.io.js')

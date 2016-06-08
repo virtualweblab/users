@@ -139,5 +139,34 @@ $(document).ready(function(){
   smoothie_S.addTimeSeries(line5_S);
   smoothie_S.addTimeSeries(line6_S);
 
+  var smoothie_A = new SmoothieChart({
+    grid: { strokeStyle:'rgb(125, 0, 0)', fillStyle:'rgb(60, 0, 0)',
+            lineWidth: 1, millisPerLine: 250, verticalSections: 6, },
+    labels: { fillStyle:'rgb(60, 0, 0)' }
+  });
+  //smoothie.streamTo(document.getElementById("mycanvas"));
+  smoothie_A.streamTo(document.getElementById("mycanvas_A"), 1000 /*delay*/);
+  // Data
+  var line1_A = new TimeSeries();
+  var line2_A = new TimeSeries();
+
+
+  // Add a random value to each line every second
+  setInterval(function() {
+    line1_A.append(new Date().getTime(), datosSmotieS[0]);
+    line2_A.append(new Date().getTime(), datosSmotieS[1]);
+  }, 1000);
+
+  smoothie_A.addTimeSeries(line1_A,
+    { strokeStyle:'rgb(0, 255, 0)', fillStyle:'rgba(0, 255, 0, 0.4)', lineWidth:3 });
+  smoothie_A.addTimeSeries(line2_A,
+    { strokeStyle:'rgb(255, 0, 255)', fillStyle:'rgba(255, 0, 255, 0.3)', lineWidth:3 });
+
+
+  // Add to SmoothieChart
+  smoothie_A.addTimeSeries(line1_A);
+  smoothie_A.addTimeSeries(line2_A);
+
+
 
 })
