@@ -1,40 +1,16 @@
 extends layoutAdmin
 
 block headMeta
-  //Timeline CSS
   link(href='../dist/css/timeline.css', rel='stylesheet')
   // Morris Charts CSS
-  link(href='../bower_components/morrisjs/morris.css', rel='stylesheet')
+  //link(href='../bower_components/morrisjs/morris.css', rel='stylesheet')
 
 block content
   #page-wrapper
       .row
         .col-lg-12
           h1.page-header Gráficos en tiempo real.
-        // /.col-lg-12
-      // /.row
       .row
-        .col-lg-12
-          //-.panel.panel-default
-            .panel-heading
-              | Panel
-            .panel-body
-              .flot-chart
-                #flot-line-chart.flot-chart-content
-        //-.col-lg-6
-          .panel.panel-default
-            .panel-heading
-              | Pie Chart Example
-            .panel-body
-              .flot-chart
-                #flot-pie-chart.flot-chart-content
-        //-.col-lg-6
-          .panel.panel-default
-            .panel-heading
-              | Multiple Axes Line Chart Example
-            .panel-body
-              .flot-chart
-                #flot-line-chart-multi.flot-chart-content
         .col-lg-12
           .panel.panel-default
             .panel-heading
@@ -42,13 +18,7 @@ block content
             .panel-body
               .flot-chart
                 #flot-line-chart-moving.flot-chart-content
-        //-.col-lg-6
-          .panel.panel-default
-            .panel-heading
-              | Bar Chart Example
-            .panel-body
-              .flot-chart
-                #flot-bar-chart.flot-chart-content
+                #controls
         .col-lg-12
           .panel.panel-default
             .panel-heading
@@ -59,18 +29,15 @@ block content
                 a(target='_blank', href='http://http://virtualweblab.github.io//') http://virtualweblab.github.io
                 | .
               a.btn.btn-default.btn-lg.btn-block(target='_blank', href='http://github.com/virtualweblab') Ver mas del código fuente de la aplicación. 
-            // /.panel-body
-          // /.panel
-        // /.col-lg-6
-      // /.row
-    // /#page-wrapper
 
 block scriptBody
+  script(type='text/javascript', src='./js/smoothie.js')
+  script(src='../js/smoothieControl.js')
   // Flot Charts JavaScript
-  script(src='../bower_components/flot/excanvas.min.js')
-  script(src='../bower_components/flot/jquery.flot.js')
-  script(src='../bower_components/flot/jquery.flot.pie.js')
-  script(src='../bower_components/flot/jquery.flot.resize.js')
-  script(src='../bower_components/flot/jquery.flot.time.js')
-  script(src='../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js')
-  script(src='../js/flot-data.js')
+  //- script(src='../bower_components/flot/excanvas.min.js')
+  //- script(src='../bower_components/flot/jquery.flot.js')
+  //- script(src='../bower_components/flot/jquery.flot.pie.js')
+  //- script(src='../bower_components/flot/jquery.flot.resize.js')
+  //- script(src='../bower_components/flot/jquery.flot.time.js')
+  //- script(src='../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js')
+  //- script(src='../js/flot-data.js')

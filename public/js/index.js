@@ -153,8 +153,8 @@ $(document).ready(function(){
 
   // Add a random value to each line every second
   setInterval(function() {
-    line1_A.append(new Date().getTime(), datosSmotieS[0]);
-    line2_A.append(new Date().getTime(), datosSmotieS[1]);
+    line1_A.append(new Date().getTime(), datosSmotieA[0]);
+    line2_A.append(new Date().getTime(), datosSmotieA[1]);
   }, 1000);
 
   smoothie_A.addTimeSeries(line1_A,
