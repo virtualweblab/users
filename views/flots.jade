@@ -1,8 +1,8 @@
 extends layoutAdmin
 
 block headMeta
-  //- link(href='http://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet', type='text/css')
-  //- link(href='./stylesheets/styleSmoothie/smoothieStyle.css', rel='stylesheet')
+  //link(href='http://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet', type='text/css')
+  //link(href='./stylesheets/styleSmoothie/smoothieStyle.css', rel='stylesheet')
 
 block content
   #page-wrapper
@@ -12,7 +12,13 @@ block content
     .row
       .col-lg-12
         .panel.panel-default
-          #controls
+          .panel-heading
+            | Proceso en tiempo real
+          .panel-body
+            .flot-chart
+              #flot-line-chart-moving.flot-chart-content
+              .col-lg-6
+                #controls
         
 block scriptBody
   script(type='text/javascript', src='./js/smoothie.js')

@@ -1,37 +1,44 @@
 var socket = io();
-var datosSmotie
-var datosSmotieS
-var datosSmotieA
 
-$('form').submit(function(){
-  socket.emit('serialCom', $('#m').val());
-  $('#m').val('');
-  return false;
-});
 $(document).ready(function(){
+
+  var datosSmotie
+  var datosSmotieS
+  var datosSmotieA
+
   socket.emit('serialCom', $('#m').val());
   $('#m').val('');
   socket.on('serialCom', function(msg){
-    //msg = msg.substring(msg.indexOf('{'),msg.lastIndexOf('}'))
-    //msg = msg.substring(msg.indexOf('{'),msg.indexOf('&'))
-    //console.log(msg);
 
-    $('#datosPLC_E').text(msg.entradas)
-    $('#datosPLC_S').text(msg.salidas)
-    $('#datosPLC_A').text(msg.analogas)
+    // for (var i in msg) {
+    //   console.log(msg[i]);
+    // }
 
-    datosSmotie = msg.entradas
-    datosSmotieS = msg.salidas
-    datosSmotieA = msg.analogas
-    //$('#messages').append($('<p>').text(msg.entradas));
-    //console.log(JSON.parse(msg))
-    //console.log(msg.indexOf('{'))
-    //console.log(msg.lastIndexOf('}'))
-    //console.log(msg.substring(3,150))
-    	//msg = msg.split("%")
-      //msg = msg.substring(2)
-    //$('#messages').text(msg[2]);
+//------------------------------------------------------------------------------
+// -PLC_1-
+    
+
+    $('#datosPLC_E_1').text(msg.plc_1.entradas)
+    $('#datosPLC_S_1').text(msg.plc_1.salidas)
+    $('#datosPLC_A_1').text(msg.plc_1.analogas)
+
+    $('#datosPLC_E_2').text(msg.plc_2.entradas)
+    $('#datosPLC_S_2').text(msg.plc_2.salidas)
+    $('#datosPLC_A_2').text(msg.plc_2.analogas)
+
+    $('#datosPLC_E_3').text(msg.plc_3.entradas)
+    $('#datosPLC_S_3').text(msg.plc_3.salidas)
+    $('#datosPLC_A_3').text(msg.plc_3.analogas)
+
+    datosSmotie = msg.plc_1.entradas
+    datosSmotieS = msg.plc_1.salidas
+    datosSmotieA = msg.plc_1.analogas
+
+
   });
+
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
   var smoothie = new SmoothieChart({
     grid: { strokeStyle:'rgb(125, 0, 0)', fillStyle:'rgb(60, 0, 0)',

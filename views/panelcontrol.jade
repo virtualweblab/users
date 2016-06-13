@@ -18,26 +18,45 @@ block content
                 th  ENTRADAS
                 th  SALIDAS
                 th  ANALOGAS
+                th  Graf Entradas
+                th  Graf Salidas
+                th  Graf Analogas
             tbody
-              td PLC_1
-              td#datosPLC_E
-              td#datosPLC_S
-              td#datosPLC_A
+              tr
+                td PLC_2
+                td#datosPLC_E_1
+                td#datosPLC_S_1
+                td#datosPLC_A_1
+                td 
+                  canvas#mycanvas.img-responsive(width='200', height='100')
+                td
+                  canvas#mycanvas_S.img-responsive(width='200', height='100')
+                td
+                  canvas#mycanvas_A.img-responsive(width='200', height='100')
+              tr      
+                td PLC_3
+                td#datosPLC_E_2
+                td#datosPLC_S_2
+                td#datosPLC_A_2
+                td 
+                  canvas#mycanvas_2.img-responsive(width='200', height='100')
+                td
+                  canvas#mycanvas_2_S.img-responsive(width='200', height='100')
+                td
+                  canvas#mycanvas_2_A.img-responsive(width='200', height='100')
+              tr
+                td PLC_1
+                td#datosPLC_E_3
+                td#datosPLC_S_3
+                td#datosPLC_A_3
+                td 
+                  canvas#mycanvas_3.img-responsive(width='200', height='100')
+                td
+                  canvas#mycanvas_3_S.img-responsive(width='200', height='100')
+                td
+                  canvas#mycanvas_3_A.img-responsive(width='200', height='100')
           ul#messages
-          //- form(action='')
-          //-   input#m(autocomplete='off')
-          //-   button Send
-          //- ul#messages
           script(type='text/javascript', src='./js/smoothie.js')
-          .row
-            .col-lg-12
-              canvas#mycanvas.img-responsive(width='800', height='100')
-          .row
-            .col-lg-12
-              canvas#mycanvas_S.img-responsive(width='800', height='100')
-          .row
-            .col-lg-12
-              canvas#mycanvas_A.img-responsive(width='800', height='100')
 
 block scriptBody
   script(src='/socket.io/socket.io.js')
