@@ -24,40 +24,41 @@ block content
             tbody
               tr
                 td PLC_2
-                td#datosPLC_E_1
-                td#datosPLC_S_1
-                td#datosPLC_A_1
+                td#datosPLC_E_plc_1
+                td#datosPLC_S_plc_1
+                td#datosPLC_A_plc_1
                 td 
-                  canvas#mycanvas.img-responsive(width='200', height='100')
+                  canvas#mycanvas0.img-responsive(width='200', height='100')
                 td
-                  canvas#mycanvas_S.img-responsive(width='200', height='100')
+                  canvas#mycanvas1.img-responsive(width='200', height='100')
                 td
-                  canvas#mycanvas_A.img-responsive(width='200', height='100')
+                  canvas#mycanvas2.img-responsive(width='200', height='100')
               tr      
                 td PLC_3
-                td#datosPLC_E_2
-                td#datosPLC_S_2
-                td#datosPLC_A_2
+                td#datosPLC_E_plc_2
+                td#datosPLC_S_plc_2
+                td#datosPLC_A_plc_2
                 td 
-                  canvas#mycanvas_2.img-responsive(width='200', height='100')
+                  canvas#mycanvas3.img-responsive(width='200', height='100')
                 td
-                  canvas#mycanvas_2_S.img-responsive(width='200', height='100')
+                  canvas#mycanvas4.img-responsive(width='200', height='100')
                 td
-                  canvas#mycanvas_2_A.img-responsive(width='200', height='100')
+                  canvas#mycanvas5.img-responsive(width='200', height='100')
               tr
                 td PLC_1
-                td#datosPLC_E_3
-                td#datosPLC_S_3
-                td#datosPLC_A_3
+                td#datosPLC_E_plc_3
+                td#datosPLC_S_plc_3
+                td#datosPLC_A_plc_3
                 td 
-                  canvas#mycanvas_3.img-responsive(width='200', height='100')
+                  canvas#mycanvas6.img-responsive(width='200', height='100')
                 td
-                  canvas#mycanvas_3_S.img-responsive(width='200', height='100')
+                  canvas#mycanvas7.img-responsive(width='200', height='100')
                 td
-                  canvas#mycanvas_3_A.img-responsive(width='200', height='100')
+                  canvas#mycanvas8.img-responsive(width='200', height='100')
           ul#messages
           script(type='text/javascript', src='./js/smoothie.js')
 
 block scriptBody
   script(src='/socket.io/socket.io.js')
   script(type='text/javascript', src='./js/index.js')
+  script(type='text/javascript', src='./js/charts.js')

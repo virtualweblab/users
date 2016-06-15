@@ -48,12 +48,18 @@ module.exports = function (http){
 			})
 			socketIoPlc_2.on('data', function(data){
 				data_trama.plc_2 = data
+				// Pruebas
+				data_trama.plc_1 = data
+				data_trama.plc_3 = data
+				// fin prueba
+				io.emit('serialCom', data_trama)
 				//console.log('data')
 				//io.emit('serialCom', data)
 				//io.emit('serialCom', {'datos_2':data})
 			})
 			socketIoPlc_3.on('data', function(data){
 				data_trama.plc_3 = data
+				io.emit('serialCom', data_trama)
 				//console.log('data')
 				//io.emit('serialCom', data)
 				//io.emit('serialCom', {'datos_3':data})
