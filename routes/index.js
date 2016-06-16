@@ -33,13 +33,13 @@ router.get('/dashes', function(req, res){
 	res.render('dashes')
 })
 router.get('/flots', function(req, res){
-	res.render('flots')
+	res.render('flots', {vapor:'vapor'})
 })
 router.get('/refri', function(req, res){
-	res.render('refrigeracion')
+	res.render('flots' , {refri:'refri'})
 })
 router.get('/oleo', function(req, res){
-	res.render('oleohidraulica')
+	res.render('flots', {oleo:'oleo'} )
 })
 router.get('/usersTable', function(req, res){
 	if(req.session.auth && req.user.Roll == 'admin'){

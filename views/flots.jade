@@ -1,8 +1,9 @@
 extends layoutAdmin
 
 block headMeta
-  //link(href='http://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet', type='text/css')
-  //link(href='./stylesheets/styleSmoothie/smoothieStyle.css', rel='stylesheet')
+  script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+  script(src='http://code.jquery.com/jquery-1.11.1.js')
+
 
 block content
   #page-wrapper
@@ -13,58 +14,46 @@ block content
       .col-lg-12
         .panel.panel-default
           .panel-heading
-            | Proceso en tiempo real
+            | Proceso en tiempo real entradas
           .panel-body
             .flot-chart
               #flot-line-chart-moving.flot-chart-content
-              .col-lg-6
-                #controls
+            .col-lg-6
+              #controls
+                
+    .row
+      .col-lg-12
+        .panel.panel-default
+          .panel-heading
+            | Proceso en tiempo real salidas
+          .panel-body
+            .flot-chart
+              #flot-line-chart-moving_2.flot-chart-content
+            .col-lg-6
+              #controls_2
+                
+    .row
+      .col-lg-12
+        .panel.panel-default
+          .panel-heading
+            | Proceso en tiempo real analogas
+          .panel-body
+            .flot-chart
+              #flot-line-chart-moving_3.flot-chart-content
+            .col-lg-6
+              #controls_3
         
 block scriptBody
+  script(src='/socket.io/socket.io.js')
+  script(type='text/javascript', src='./js/dat.gui.min.js')
+  script(type='text/javascript', src='./js/index.js')
+  script(type='text/javascript', src='./js/gui_flots.js')
   script(type='text/javascript', src='./js/smoothie.js')
-  script(src='../js/smoothieControl.js')
-  
-  
-//- extends layoutAdmin
-//- 
-//- block headMeta
-//-   link(href='../dist/css/timeline.css', rel='stylesheet')
-//-   // Morris Charts CSS
-//-   //link(href='../bower_components/morrisjs/morris.css', rel='stylesheet')
-//- 
-//- block content
-//-   #page-wrapper
-//-       .row
-//-         .col-lg-12
-//-           h1.page-header Gráficos en tiempo real.
-//-       .row
-//-         .col-lg-12
-//-           .panel.panel-default
-//-             .panel-heading
-//-               | Proceso en tiempo real
-//-             .panel-body
-//-               .flot-chart
-//-                 #flot-line-chart-moving.flot-chart-content
-//-                 #controls
-//-         .col-lg-12
-//-           .panel.panel-default
-//-             .panel-heading
-//-               | Como usar la plataforma
-//-             .panel-body
-//-               p
-//-                 |  Para usar nuestra plataforma puedes dirigirte al siguiente enlace, 
-//-                 a(target='_blank', href='http://http://virtualweblab.github.io//') http://virtualweblab.github.io
-//-                 | .
-//-               a.btn.btn-default.btn-lg.btn-block(target='_blank', href='http://github.com/virtualweblab') Ver mas del código fuente de la aplicación. 
-//- 
-//- block scriptBody
-//-   script(type='text/javascript', src='./js/smoothie.js')
-//-   script(src='../js/smoothieControl.js')
-  // Flot Charts JavaScript
-  //- script(src='../bower_components/flot/excanvas.min.js')
-  //- script(src='../bower_components/flot/jquery.flot.js')
-  //- script(src='../bower_components/flot/jquery.flot.pie.js')
-  //- script(src='../bower_components/flot/jquery.flot.resize.js')
-  //- script(src='../bower_components/flot/jquery.flot.time.js')
-  //- script(src='../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js')
-  //- script(src='../js/flot-data.js')
+  if(vapor)
+    script(type='text/javascript', src='./js/charts_flots.js')
+    
+  if(refri)
+    script(type='text/javascript', src='./js/charts_flots_refri.js')
+    
+  if(oleo)
+    script(type='text/javascript', src='./js/charts_flots_oleo.js')

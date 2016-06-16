@@ -24,17 +24,24 @@ var initChart = function (){
       $('#datosPLC_A_' + i).text(msg[i].analogas)
     }
 
-    gc_0.execute(msg.plc_1.entradas)
-    gc_1.execute(msg.plc_1.salidas)
-    gc_2.execute(msg.plc_1.analogas)
+    if (!$.isEmptyObject(msg.plc_1)) {
+      gc_0.execute(msg.plc_1.entradas)
+      gc_1.execute(msg.plc_1.salidas)
+      gc_2.execute(msg.plc_1.analogas)
+    }
 
-    gc_3.execute(msg.plc_2.entradas)
-    gc_4.execute(msg.plc_2.salidas)
-    gc_5.execute(msg.plc_2.analogas)
-    
-    gc_6.execute(msg.plc_3.entradas)
-    gc_7.execute(msg.plc_3.salidas)
-    gc_8.execute(msg.plc_3.analogas)
+    if (!$.isEmptyObject(msg.plc_2)) {
+      gc_3.execute(msg.plc_2.entradas)
+      gc_4.execute(msg.plc_2.salidas)
+      gc_5.execute(msg.plc_2.analogas)
+    }
+
+    if (!$.isEmptyObject(msg.plc_3)) {  
+      gc_6.execute(msg.plc_3.entradas)
+      gc_7.execute(msg.plc_3.salidas)
+      gc_8.execute(msg.plc_3.analogas)
+    }
+
   });
 
 }
