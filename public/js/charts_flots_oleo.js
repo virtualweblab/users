@@ -59,7 +59,7 @@ var initChart_Flots = function(){
     if (!$.isEmptyObject(msg.plc_1)) {
       gc.execute(msg.plc_3.entradas)
       gc_2.execute(msg.plc_3.salidas)
-      gc_3.execute(msg.plc_3.analogas)
+      gc_3.execute(msg.plc_1.analogas)
     }
 
 
