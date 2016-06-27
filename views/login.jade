@@ -26,7 +26,7 @@ html(lang='en')
         .col-md-4.col-md-offset-4
           .login-panel.panel.panel-default
             .panel-heading
-              h3.panel-title Please Sign In
+              h3.panel-title Autenticación
             .panel-body
               form(role='form' action="/users/findPass" method="post")
                 fieldset
@@ -37,16 +37,16 @@ html(lang='en')
                   .checkbox
                     label
                       input(name='remember', type='checkbox', value='Remember Me')
-                      | Remember Me
+                      | Recordarme
                   // Change this to a button or input when using this as a form
                   //a.btn.btn-lg.btn-success.btn-block(href='/admin') Login
-                  button(class="btn btn-primary btn-lg btn-block") Submit
-                  a.btn.btn-block.btn-social.btn-twitter(href='#')
-                    span.fa.fa-twitter
-                    |  Sign in with Twitter
+                  button(class="btn btn-primary btn-lg btn-block") Enviar información
+                  //- a.btn.btn-block.btn-social.btn-twitter(href='#')
+                  //-   span.fa.fa-twitter
+                  //-   |  Sign in with Twitter
                   a.btn.btn-block.btn-social.btn-facebook(href='/auth/facebook')
                     span.fa.fa-facebook
-                    |  Sign in with Facebook
+                    |  Registro o autenticación con Facebook
 
     // jQuery
     script(src='../bower_components/jquery/dist/jquery.min.js')

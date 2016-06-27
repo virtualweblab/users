@@ -7,10 +7,10 @@ block content
 				div(class="row")
 					div(class="col-sm-8 col-sm-offset-2 text")
 						h1
-							strong VWL
-							h1 User register
+							strong Bienvenidos a VWL
+							h1 Registro en Virtual Web Lab
 						div(class="description")
-							p Please fill the information
+							p Registro de usuarios
 				div(class='row')
 					div(class="col-sm-1 middle-border")
 					div(class="col-sm-1")
@@ -18,25 +18,25 @@ block content
 						div(class="form-box")
 							div(class="form-top")
 								div(class="form-top-left")
-									h3 Atenttion
-									p All rights reserved
+									h3 Por favor llenar el siguiente formulario para su registro
+									p Todos la información suministrada es reservada
 								div(class="form-top-right")
 									i(class="fa fa-pencil")
 							div(class="form-bottom")
 							form(lass="form col-md-12 center-block" action="/users/createUser" method="post")
 								div(class="form-group")
-									label(class="sr-only" for="form-first-name") Name
+									label(class="sr-only" for="form-first-name") Nombre
 									input(type="text" name="Name" placeholder="Name ..." class="form-first-name form-control" id="Name")
 								div(class="form-group")
-									label(class="sr-only" for="form-first-name") LastName
+									label(class="sr-only" for="form-first-name") Apellido
 									input(type="text" name="LastName" placeholder="LastName ..." class="form-first-name form-control" id="LastName")
 								div(class="form-group")
-									label(class="sr-only" for="form-id") Password
+									label(class="sr-only" for="form-id") Contraseña
 									input(type="password" name="Password" placeholder="Password..." class="form-last-name form-control" id="Password")
 								div(class="form-group")
-									label(class="sr-only" for="form-id") Password
+									label(class="sr-only" for="form-id") Repita la contraseña
 									input(type="password" name="rePassword" placeholder="Re-Password..." class="form-last-name form-control" id="form-last-name")
 								div(class="form-group")
-									label(class="sr-only" for="form-email") Email
+									label(class="sr-only" for="form-email") E-mail
 									input(type="text" name="Email" placeholder="Email..." class="form-email form-control" id="Email")
 								button(class="btn btn-primary btn-lg btn-block") Submit
