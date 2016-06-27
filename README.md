@@ -19,9 +19,9 @@ Este es el servidor de usuarios y motor de la aplicación de VWL.
 
 Los componentes necesarios son:
 
--- Node.JS versión 4.4.5
--- NPM versión 3.3.6
--- MongoDB versión 2.6.4
+- Node.JS versión 4.4.5
+- NPM versión 3.3.6
+- MongoDB versión 2.6.4
 
 ## Arquitectura
 
@@ -73,6 +73,15 @@ users
 ## Plataformas
 
 #### Windows
+```
+# Win
+# Proyecto VWL Modo Servidor
+  git clone https://github.com/virtualweblab/users.git
+# Instalacion de paquetes
+  npm install
+# Correr aplicacion
+  node app.js
+```
 
 #### Mac OS X
 
@@ -117,4 +126,4 @@ Uso de la plataforma:
 ## Aclaraciones
 
 
-- Para cualquier error por favor consultar o informar a: [Issue](https://github.com/virtualweblab/users/issues)
+- Para cualquier error por favor consultar o informar a: [Issues](https://github.com/virtualweblab/users/issues)
