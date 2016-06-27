@@ -42,7 +42,7 @@ router.get('/oleo', function(req, res){
 	res.render('flots', {oleo:'oleo'} )
 })
 router.get('/usersTable', function(req, res){
-	if(req.session.auth && req.user.Roll == 'admin'){
+	if(req.session.auth /*&& req.user.Roll == 'admin' */){
 		Usersdb.findAllUsers(function(err, users){
 			if (err) res.send(err)
 			else res.render('userTable',{users:users})
