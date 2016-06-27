@@ -39,7 +39,7 @@ findAllUsers = function(req, res){
 updateUser = function(req, res){
 	Usersdb.updateUser(req,function(err, user){
 		if (err) res.send(err)
-		else res.send(user)
+		else res.redirect('/usersTable')
 	})
 }
 
