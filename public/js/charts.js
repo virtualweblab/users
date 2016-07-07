@@ -18,6 +18,7 @@ var initChart = function (){
 
 
   socket.on('serialCom', function(msg){
+
     for (var i in msg) {
       $('#datosPLC_E_' + i).text(msg[i].entradas)
       $('#datosPLC_S_' + i).text(msg[i].salidas)
@@ -36,7 +37,7 @@ var initChart = function (){
       gc_5.execute(msg.plc_2.analogas)
     }
 
-    if (!$.isEmptyObject(msg.plc_3)) {  
+    if (!$.isEmptyObject(msg.plc_3)) {
       gc_6.execute(msg.plc_3.entradas)
       gc_7.execute(msg.plc_3.salidas)
       gc_8.execute(msg.plc_3.analogas)
