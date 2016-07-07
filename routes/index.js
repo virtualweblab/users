@@ -11,7 +11,28 @@ router.get('/panelcontrol',function(req,res){
 	res.render('panelcontrol')
 })
 
+router.get('/articulos',function(req,res){
+	res.render('articulos')
+})
+router.get('/manuales',function(req,res){
+	res.render('manuales')
+})
 
+router.get('/art1',function(req,res){
+	res.download('./public/manuales/M1.pdf')
+})
+router.get('/art2',function(req,res){
+	res.download('./public/manuales/M2.pdf')
+})
+router.get('/art3',function(req,res){
+	res.download('./public/manuales/M3.pdf')
+})
+router.get('/art4',function(req,res){
+	res.download('./public/manuales/M4.pdf')
+})
+router.get('/art5',function(req,res){
+	res.download('./public/manuales/M5.pdf')
+})
 
 /* GET home page. */
 router.get('/login', function(req, res) {

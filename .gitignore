@@ -1,4 +1,12 @@
 config.js
+app.js
 node_modules
+bin
+bower_components
+helper
+middleware
+serial-socket
+bower.json
+package.json
 logs
 npm-debug.log
