@@ -1,3 +1,17 @@
+/**
+*
+* @file Creacion y configuracion de los GUI por medio de DAT.GUI
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+*/
+
+
+/**
+ * InitDisplay - Crea objetos genericos para el manejo de las opciones de cada ventana de visualizacion
+ *
+ * @param  {Obj} controlContainer Contenedor Camvas
+ * @return {type}                  description
+ */
 function InitDisplay (controlContainer){
   this.interpolar;
   this.minValue;
@@ -23,6 +37,12 @@ function InitDisplay (controlContainer){
   this.controlContainer = controlContainer
 }
 
+/**
+ * InitDisplay.prototype.init - Inicia los graficos
+ *
+ * @param  {Obj} gc Camvas
+ * @return {type}    description
+ */
 InitDisplay.prototype.init = function(gc){
 
   this.gui = new dat.GUI({ autoPlace: false })
@@ -43,6 +63,13 @@ InitDisplay.prototype.init = function(gc){
   this.eventsGui(gc)
 }
 
+
+/**
+ * anonymous function - Escucha de eventos de los GUI
+ *
+ * @param  {type} gc Canvas 
+ * @return {type}    description
+ */
 InitDisplay.prototype.eventsGui = function (gc) {
   this.interpolar.onChange(function(value){
     gc.smoothie.options.interpolation = value

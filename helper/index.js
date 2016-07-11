@@ -1,5 +1,16 @@
+/**
+*
+* @file Todo de la APP
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+*/
 var User = require('../models')
 
+/**
+ * module - TODO
+ * @todo implementacion de funcionalidades
+ * @return {type}  description
+ */
 module.exports = function(){
 
 	createUser = function(req, callback){
@@ -10,7 +21,7 @@ module.exports = function(){
 			Password : req.body.Password,
 			Email : req.body.Email
 		})
-		
+
 		user.save(function(err){
 			if (err) {
 				console.log('Creacion de usuario fallida, Err: ' + err)

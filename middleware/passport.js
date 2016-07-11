@@ -1,3 +1,10 @@
+/**
+*
+* @file Login con passport.js y facebook
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+*/
+
 var mongoose = require('mongoose');
 //var User = mongoose.model('Users');
 var User = require('../models')
@@ -24,7 +31,7 @@ module.exports = function(passport) {
 		callbackURL	 	: '/auth/facebook/callback',
 		profileFields 	: ['id', 'displayName', /*'provider',*/ 'photos', 'email']
 	}, function(accessToken, refreshToken, profile, done) {
-		
+
 		User.findOne({provider_id: profile.id}, function(err, user) {
 			if(err) throw(err);
 			if(!err && user!= null) return done(null, user);

@@ -1,9 +1,25 @@
+/**
+*
+* @file Manejo de las rutas del Proyecto
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+*/
+
 var express = require('express');
 var router = express.Router();
 
 var Users = require('../helper')
 var Usersdb = Users()
 
+
+/**
+ * router - description
+ *
+ * @param  {type} '/'          Ruta Raiz 
+ * @param  {type} function(req description
+ * @param  {type} res          Render de vista
+ * @return {type}              description
+ */
 router.get('/',function(req,res){
 	res.render('index')
 })

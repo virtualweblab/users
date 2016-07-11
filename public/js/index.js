@@ -1,3 +1,17 @@
+/**
+*
+* @file Genera los Smoothie para visualización
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+*/
+
+
+/**
+ * DisplayChart - Genera los cambas de visualizacion
+ *
+ * @param  {type} canvas Canvas
+ * @return {type}        description
+ */
 function DisplayChart (canvas){
   this.signals = [];
   this.smoothie;
@@ -29,6 +43,13 @@ function DisplayChart (canvas){
   this.estate = 0
 }
 
+
+/**
+ * DisplayChart.prototype.init - Inicia graficado
+ *
+ * @param  {type} data Datos del websocket para graficado
+ * @return {type}      description
+ */
 DisplayChart.prototype.init = function(data){
   if (this.estate == 0) {
     this.smoothie = new SmoothieChart(this.smoothieOptions);
@@ -50,6 +71,12 @@ DisplayChart.prototype.init = function(data){
   //this.smoothie.options.interpolation = 'step'
 }
 
+/**
+ * DisplayChart.prototype.getRandomColor - Genera los colores de cada linea dependiendo
+ * de la cantidad de datos a graficar
+ *
+ * @return {type}  description
+ */
 DisplayChart.prototype.getRandomColor = function(){
   this.colorStroke = 'rgb(' + (Math.random()*256|100).toString() + ',' +
                               (Math.random()*256|100).toString() + ',' +
@@ -57,11 +84,25 @@ DisplayChart.prototype.getRandomColor = function(){
   return this.colorStroke
 }
 
+
+/**
+ * DisplayChart.prototype.execute - Core de cada uno de los GUI
+ *
+ * @param  {type} data Datos de adquisicion de datos
+ * @return {type}      description
+ */
 DisplayChart.prototype.execute = function(data){
   this.init(data)
   this.updataData(data)
 }
 
+
+/**
+ * anonymous function - Genera la linea de secuencia
+ *
+ * @param  {type} data Datos
+ * @return {type}      description
+ */
 DisplayChart.prototype.updataData = function (data) {
   for (var i = 0; i < data.length; i++) {
     this.signals[i].append(new Date().getTime(), data[i] );

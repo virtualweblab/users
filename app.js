@@ -1,3 +1,11 @@
+/** Conexion y arranque de la base de datos, servidor
+* @file Este proyecto crea un servidor a partir de WebSockets que permite la comunicion en tiempo real de PLC - Arduino
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+ */
+
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -16,6 +24,14 @@ var mongoose = require('mongoose')
 
 require('./middleware/passport')(passport);
 
+/**
+ * mongoose - Conexion Base de datos MongoDB
+ *
+ * @param  {String} 'mongodb://localhost/vwlUsuarios' Base de datos de la Conexion
+ * @param  {type} function(err                      Funcion de Conexion exitosa
+ * @param  {type} res                               description
+ * @return {type}                                   description
+ */
 mongoose.connect('mongodb://localhost/vwlUsuarios',function(err, res){
     if (err) {
         console.log('Conexion a la base de datos fallida, Error: ' + err)
@@ -29,6 +45,10 @@ var app = require('express')()
 var http = require('http').Server(app)
 var serialSocket = require('./serial-socket')
 
+
+/**
+ *@param {http} http HTTP de la Conexion
+ */
 serialSocket(http)
 
 // view engine setup
@@ -110,6 +130,9 @@ app.use(function(err, req, res, next) {
     });
 });
 
+/**
+ * @param {int} process.env.PORT Puerto de escucha
+ */
 app.set('port' , process.env.PORT || 3000)
 
 http.listen(app.get('port'), function(){

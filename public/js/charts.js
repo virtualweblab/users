@@ -1,4 +1,12 @@
+/**
+*
+* @file Comunicacion entre front y back por websockets
+* @author Mauricio Duque Orozco <mauricio.duque.eje@icloud.com>
+* @copyright Mauricio Duque Orozco
+*/
+
 var socket = io();
+
 
 socket.emit('serialCom', $('#m').val());
 $('#m').val('');
